@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d2fbb11a-6d56-4511-b6a2-c449b260cda1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/wad/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wad/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/wad/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/wad/AppTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit4 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="custom-set-warname" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1axOypsdy3978FGAItxx7plec5R" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.airhacks.wad.control" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.WarNameProviderTest.finalNameInPomIsSet">
+    <configuration name="AppTest.shouldExtractCustomSetWarNameFromArguments" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wad" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="wad.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="wad" />
+      <option name="MAIN_CLASS_NAME" value="wad.AppTest" />
+      <option name="METHOD_NAME" value="shouldExtractCustomSetWarNameFromArguments" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WarNameProviderTest.finalNameInPomIsNotSet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wad" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.airhacks.wad.control.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.airhacks.wad.control" />
+      <option name="MAIN_CLASS_NAME" value="com.airhacks.wad.control.WarNameProviderTest" />
+      <option name="METHOD_NAME" value="finalNameInPomIsNotSet" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WarNameProviderTest.finalNameInPomIsSet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wad" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.airhacks.wad.control.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.airhacks.wad.control" />
+      <option name="MAIN_CLASS_NAME" value="com.airhacks.wad.control.WarNameProviderTest" />
+      <option name="METHOD_NAME" value="finalNameInPomIsSet" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.WarNameProviderTest.finalNameInPomIsSet" />
+        <item itemvalue="JUnit.WarNameProviderTest.finalNameInPomIsNotSet" />
+        <item itemvalue="JUnit.AppTest.shouldExtractCustomSetWarNameFromArguments" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../LSL-P-lightbend-scala-language-professional/exercises" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../play-scala-seed" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../theseus-master" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d2fbb11a-6d56-4511-b6a2-c449b260cda1" name="Default Changelist" comment="" />
+      <created>1587674035400</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587674035400</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="555" y="190" width="802" height="679" key="#Project_Structure" timestamp="1587678093405">
+      <screen x="0" y="0" width="1920" height="1054" />
+    </state>
+    <state x="555" y="190" width="802" height="679" key="#Project_Structure/0.0.1920.1054@0.0.1920.1054" timestamp="1587678093405" />
+    <state x="667" y="198" width="577" height="663" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1587678074350">
+      <screen x="0" y="0" width="1920" height="1054" />
+    </state>
+    <state x="667" y="198" width="577" height="663" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1920.1054@0.0.1920.1054" timestamp="1587678074350" />
+    <state x="99" y="99" width="1722" height="859" key="DiffContextDialog" timestamp="1587677937018">
+      <screen x="0" y="0" width="1920" height="1054" />
+    </state>
+    <state x="99" y="99" width="1722" height="859" key="DiffContextDialog/0.0.1920.1054@0.0.1920.1054" timestamp="1587677937018" />
+    <state x="743" y="286" width="426" height="486" key="FileChooserDialogImpl" timestamp="1587675588180">
+      <screen x="0" y="0" width="1920" height="1054" />
+    </state>
+    <state x="743" y="286" width="426" height="486" key="FileChooserDialogImpl/0.0.1920.1054@0.0.1920.1054" timestamp="1587675588180" />
+    <state width="1874" height="271" key="GridCell.Tab.0.bottom" timestamp="1587678180101">
+      <screen x="0" y="0" width="1920" height="1054" />
+    </state>
+    <state width="1874" height="271" key="GridCell.Tab.0.bottom/0.0.1920.1054@0.0.1920.1054" timestamp="1587678180101" />
+    <state width="1874" height="271" key="GridCell.Tab.0.center" timestamp="1587678180100">
+      <screen x="0" y="0" width="1920" height="1054" />
+    </state>
+    <state width="1874" height="271" key="GridCell.Tab.0.center/0.0.1920.1054@0.0.1920.1054" timestamp="1587678180100" />
+    <state width="1874" height="271" key="GridCell.Tab.0.left" timestamp="1587678180099">
+      <screen x="0" y="0" width="1920" height="1054" />
+    </state>
+    <state width="1874" height="271" key="GridCell.Tab.0.left/0.0.1920.1054@0.0.1920.1054" timestamp="1587678180099" />
+    <state width="1874" height="271" key="GridCell.Tab.0.right" timestamp="1587678180101">
+      <screen x="0" y="0" width="1920" height="1054" />
+    </state>
+    <state width="1874" height="271" key="GridCell.Tab.0.right/0.0.1920.1054@0.0.1920.1054" timestamp="1587678180101" />
+    <state x="449" y="163" width="1022" height="732" key="SettingsEditor" timestamp="1587677936582">
+      <screen x="0" y="0" width="1920" height="1054" />
+    </state>
+    <state x="449" y="163" width="1022" height="732" key="SettingsEditor/0.0.1920.1054@0.0.1920.1054" timestamp="1587677936582" />
+    <state x="813" y="215" width="278" height="631" key="VCS.ChangeListViewerDialog" timestamp="1587676409430">
+      <screen x="0" y="0" width="1920" height="1054" />
+    </state>
+    <state x="813" y="215" width="278" height="631" key="VCS.ChangeListViewerDialog/0.0.1920.1054@0.0.1920.1054" timestamp="1587676409430" />
+    <state x="700" y="245" width="511" height="568" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1587677739114">
+      <screen x="0" y="0" width="1920" height="1054" />
+    </state>
+    <state x="700" y="245" width="511" height="568" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1054@0.0.1920.1054" timestamp="1587677739114" />
+    <state x="605" y="267" width="710" height="522" key="find.popup" timestamp="1587677383826">
+      <screen x="0" y="0" width="1920" height="1054" />
+    </state>
+    <state x="605" y="267" width="710" height="522" key="find.popup/0.0.1920.1054@0.0.1920.1054" timestamp="1587677383826" />
+    <state x="682" y="396" width="548" height="267" key="git4idea.rebase.GitRebaseDialog" timestamp="1587676410804">
+      <screen x="0" y="0" width="1920" height="1054" />
+    </state>
+    <state x="682" y="396" width="548" height="267" key="git4idea.rebase.GitRebaseDialog/0.0.1920.1054@0.0.1920.1054" timestamp="1587676410804" />
+  </component>
+</project>

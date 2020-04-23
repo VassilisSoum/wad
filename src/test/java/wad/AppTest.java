@@ -1,10 +1,12 @@
 package wad;
 
+import org.junit.Test;
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import org.junit.Test;
 
 /**
  *
@@ -28,13 +30,5 @@ public class AppTest {
 
         actual = App.addTrailingSlash("/").toString();
         assertThat(actual, is(expected));
-    }
-
-    @Test
-    public void shouldExtractCustomSetWarNameFromArguments() {
-        String expectedWarName = "CustomWarName";
-        String[] args = new String[] {"warName=" + expectedWarName};
-
-        assertThat(App.getCustomSetWarName(args).get(), is(expectedWarName));
     }
 }

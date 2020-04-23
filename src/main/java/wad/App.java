@@ -3,10 +3,8 @@ package wad;
 
 import com.airhacks.wad.boundary.WADFlow;
 import com.airhacks.wad.control.Configurator;
+import com.airhacks.wad.control.WarNameProvider;
 
-import static com.airhacks.wad.control.PreBuildChecks.exit;
-import static com.airhacks.wad.control.PreBuildChecks.pomExists;
-import static com.airhacks.wad.control.PreBuildChecks.validateDeploymentDirectories;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,10 +12,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 import java.util.Properties;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import static com.airhacks.wad.control.PreBuildChecks.pomExists;
+import static com.airhacks.wad.control.PreBuildChecks.validateDeploymentDirectories;
 
 /**
  *
@@ -55,11 +55,6 @@ public class App {
                 collect(Collectors.toList());
     }
 
-    static Optional<String> getCustomSetWarName(String[] args) {
-        Optional<String> customSetWarName = Arrays.stream(args).filter(arg -> arg.startsWith("warName=")).findFirst();
-        return customSetWarName.map(s -> s.split("=")[1]);
-    }
-
     public static void main(String[] args) throws IOException {
         printWelcomeMessage();
         if (args.length < 1 && !Configurator.userConfigurationExists()) {
@@ -68,21 +63,12 @@ public class App {
         }
         pomExists();
 
-        Path thinWARPath = null;
-        String thinWARName = null;
-        Optional<String> customSetWarName = getCustomSetWarName(args);
-        if (customSetWarName.isPresent()) {
-            try {
-                thinWARPath = Paths.get("target", customSetWarName.get());
-            } catch (Exception e) {
-                exit();
-            }
-        } else {
-            Path currentPath = Paths.get("").toAbsolutePath();
-            Path currentDirectory = currentPath.getFileName();
-            thinWARName = currentDirectory + ".war";
-            thinWARPath = Paths.get("target", thinWARName);
-        }
+        Path currentPath = Paths.get("").toAbsolutePath();
+        Path pomXml = currentPath.resolve("pom.xml");
+
+        String thinWARName = WarNameProvider.getCustomWarName(pomXml);
+
+        Path thinWARPath = Paths.get("target", thinWARName);
 
         Set<Path> deploymentDirs = Configurator.getConfiguredFolders(convert(args));
         validateDeploymentDirectories(deploymentDirs);

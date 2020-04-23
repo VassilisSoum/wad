@@ -30,5 +30,11 @@ public class AppTest {
         assertThat(actual, is(expected));
     }
 
+    @Test
+    public void shouldExtractCustomSetWarNameFromArguments() {
+        String expectedWarName = "CustomWarName";
+        String[] args = new String[] {"warName=" + expectedWarName};
 
+        assertThat(App.getCustomSetWarName(args).get(), is(expectedWarName));
+    }
 }

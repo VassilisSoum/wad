@@ -46,7 +46,10 @@ public class App {
     }
 
     static List<Path> convert(String[] args) {
-        return Arrays.stream(args).map(App::addTrailingSlash).collect(Collectors.toList());
+        return Arrays.stream(args)
+                .filter(arg -> !arg.startsWith("watchPaths="))
+                .map(App::addTrailingSlash)
+                .collect(Collectors.toList());
     }
 
     static List<Path> addWarName(Set<Path> deploymentDirectories, String warName) {

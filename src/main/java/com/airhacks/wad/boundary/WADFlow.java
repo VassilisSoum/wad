@@ -5,21 +5,23 @@ import com.airhacks.wad.control.Builder;
 import com.airhacks.wad.control.Copier;
 import com.airhacks.wad.control.FolderWatchService;
 import com.airhacks.wad.control.TerminalColors;
+import org.apache.maven.shared.invoker.InvocationResult;
+import org.apache.maven.shared.invoker.MavenInvocationException;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Path;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
-import static java.time.temporal.ChronoField.HOUR_OF_DAY;
-import static java.time.temporal.ChronoField.MINUTE_OF_HOUR;
-import static java.time.temporal.ChronoField.SECOND_OF_MINUTE;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.LongSummaryStatistics;
 import java.util.concurrent.atomic.AtomicLong;
-import org.apache.maven.shared.invoker.InvocationResult;
-import org.apache.maven.shared.invoker.MavenInvocationException;
+
+import static java.time.temporal.ChronoField.HOUR_OF_DAY;
+import static java.time.temporal.ChronoField.MINUTE_OF_HOUR;
+import static java.time.temporal.ChronoField.SECOND_OF_MINUTE;
 
 /**
  *
@@ -34,14 +36,14 @@ public class WADFlow {
     private final Copier copier;
     private final Builder builder;
 
-    public WADFlow(Path dir, Path war, List<Path> deploymentTargets) throws IOException {
+    public WADFlow(List<Path> dirs, Path war, List<Path> deploymentTargets) throws IOException {
         this.builder = new Builder();
         this.buildTimes = new ArrayList<>();
         this.copier = new Copier(war, deploymentTargets);
         Runnable changeListener = this::buildAndDeploy;
         changeListener.run();
         registerEnterListener(changeListener);
-        FolderWatchService.listenForChanges(dir, changeListener);
+        FolderWatchService.listenForChanges(dirs, changeListener);
     }
 
     void registerEnterListener(Runnable listener) {

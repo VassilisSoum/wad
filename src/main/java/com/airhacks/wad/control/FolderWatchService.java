@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -16,30 +17,30 @@ import java.util.concurrent.TimeUnit;
  */
 public interface FolderWatchService {
 
-    static long POLLING_INTERVALL = 500;
+    long POLLING_INTERVALL = 500;
 
-    static String POM = "pom.xml";
+    String POM = "pom.xml";
 
-    public static void listenForChanges(Path dir, Runnable listener) throws IOException {
+    static void listenForChanges(List<Path> dirs, Runnable listener) throws IOException {
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-        checkForChanges(scheduler, dir, listener);
+        checkForChanges(scheduler, dirs, listener);
     }
 
-    static void checkForChanges(ScheduledExecutorService scheduler, Path dir, Runnable changeListener) {
-        long initialStamp = getProjectModificationId(dir);
-        boolean changeDetected = false;
+    static void checkForChanges(ScheduledExecutorService scheduler, List<Path> dirs, Runnable changeListener) {
+        long initialStamp = dirs.stream().mapToLong(FolderWatchService::getProjectModificationId).sum();
+        boolean changeDetected;
         while (true) {
             try {
                 final long previous = initialStamp;
                 changeDetected = scheduler.
-                        schedule(() -> detectModification(dir, previous), POLLING_INTERVALL, TimeUnit.MILLISECONDS).
+                        schedule(() -> detectModification(dirs, previous), POLLING_INTERVALL, TimeUnit.MILLISECONDS).
                         get();
         } catch (InterruptedException | ExecutionException ex) {
             throw new IllegalStateException("Scheduler error", ex);
         }
         if (changeDetected) {
                 changeListener.run();
-            initialStamp = getProjectModificationId(dir);
+            initialStamp = dirs.stream().mapToLong(FolderWatchService::getProjectModificationId).sum();
             }
         }
     }
@@ -48,8 +49,8 @@ public interface FolderWatchService {
         return getFileSize(Paths.get(POM));
     }
 
-    static boolean detectModification(Path dir, long previousStamp) {
-        long currentStamp = getProjectModificationId(dir);
+    static boolean detectModification(List<Path> dirs, long previousStamp) {
+        long currentStamp = dirs.stream().mapToLong(FolderWatchService::getProjectModificationId).sum();
         return previousStamp != currentStamp;
     }
 

@@ -4,6 +4,7 @@ package wad;
 import com.airhacks.wad.boundary.WADFlow;
 import com.airhacks.wad.control.Configurator;
 import com.airhacks.wad.control.WarNameProvider;
+import com.airhacks.wad.control.WatchPathsProvider;
 
 import java.io.File;
 import java.io.IOException;
@@ -74,9 +75,9 @@ public class App {
         validateDeploymentDirectories(deploymentDirs);
 
         List<Path> deploymentTargets = addWarName(deploymentDirs, thinWARName);
-        Path sourceCodeDir = Paths.get("./src/main/");
-        System.out.printf("WAD is watching %s, deploying %s to %s \n", sourceCodeDir, thinWARPath, deploymentTargets);
-        WADFlow wadFlow = new WADFlow(sourceCodeDir, thinWARPath, deploymentTargets);
+        List<Path> sourceCodeDirs = WatchPathsProvider.get(args);
+        System.out.printf("WAD is watching %s, deploying %s to %s \n", sourceCodeDirs, thinWARPath, deploymentTargets);
+        WADFlow wadFlow = new WADFlow(sourceCodeDirs, thinWARPath, deploymentTargets);
     }
 
 }
